@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+}
+.container {
+    border: 2px solid;
+    margin-left: 284px;
+    margin-right: 284px;
+}
+h3{
+    background-color: #140707;
+    text-align: right;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    padding-right: 20px;
+}
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+}
+.btns div{
+    border: 1px solid;
+    width: 70px;
+    height: 70px;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #d9dcdc;
+}
+#num0 {
+    width: 132px;
+    justify-content: flex-start;
+    padding-left:25px ;
+}
+i{
+    font-size:20px ;
+}
+#decimal-btn i{
+    font-size: 0.4em;
+}
+#ac-btn, #clear-btn, #percentage-btn{
+    background-color: #dadddc;
+}
+
+#division-btn, #multiply-btn, #subtraction-btn, #add-btn, #equal-btn{
+    background-color: orange;
+
+}
+#division-btn i, #multiply-btn i, #subtraction-btn i, #add-btn i, #equal-btn i{
+    color: white;
+}
+
+
+
