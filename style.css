@@ -1,122 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    position: relative;
-    font-size: 50px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #140707;
+body {
+  position: relative;
+  font-size: 50px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #140707;
 }
 
-
-.wrapper{
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width:900px;
+.wrapper {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
 }
 
 .container {
-    background-color: #140707;
-    border: 2px solid;
-    margin-left: 255px;
-    margin-right: 255px;
-    
+  background-color: #140707;
+  border: 2px solid;
+  margin-left: 255px;
+  margin-right: 255px;
 }
 /* Output */
-h3{
-    text-align: right;
-    padding-bottom: 10px;
-    padding-top: 50px;
-    padding-right: 20px;
-    color: white;
+h3 {
+  text-align: right;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  padding-right: 20px;
+  color: white;
 }
 /* BUTTONS */
-.btns{
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 10px;
-    
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
 }
 
-.btns div{
-    border: 1px solid;
-    width: 70px;
-    height: 70px;
-    padding:5px;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color:#3F3F3F;
-    border-radius: 50%;
-    color: white;
-    border-color: transparent;
+.btns div {
+  border: 1px solid;
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #3f3f3f;
+  border-radius: 50%;
+  color: white;
+  border-color: transparent;
 }
-.btns div:hover{
-    background-color: #A9A9A9;
+.btns div:hover {
+  background-color: #a9a9a9;
 }
 
 #num0 {
-    width: 140px;
-    justify-content: flex-start;
-    padding-left:25px ;
-    border-radius: 50px;
+  width: 140px;
+  justify-content: flex-start;
+  padding-left: 25px;
+  border-radius: 50px;
 }
 
 i {
-    font-size:25px ;
+  font-size: 25px;
 }
 
-#decimal-btn i{
-    font-size: 0.4em;
+#decimal-btn i {
+  font-size: 0.4em;
 }
 
-#ac-btn, #clear-btn, #percentage-btn{
-    background-color: #C0C0C0;
-    color: black;
+#ac-btn,
+#clear-btn,
+#percentage-btn {
+  background-color: #c0c0c0;
+  color: black;
 }
 
-#ac-btn:hover, #clear-btn:hover, #percentage-btn:hover{
-    background-color: white;
-    
+#ac-btn:hover,
+#clear-btn:hover,
+#percentage-btn:hover {
+  background-color: white;
 }
 
-#division-btn, #multiply-btn, #subtraction-btn, #add-btn, #equal-btn{
-    background-color: orange;
-
+#division-btn,
+#multiply-btn,
+#subtraction-btn,
+#add-btn,
+#equal-btn {
+  background-color: orange;
 }
 
-#division-btn:hover, #multiply-btn:hover, #subtraction-btn:hover, #add-btn:hover, #equal-btn:hover{
- background-color: #FFC82F;
+#division-btn:hover,
+#multiply-btn:hover,
+#subtraction-btn:hover,
+#add-btn:hover,
+#equal-btn:hover {
+  background-color: #ffc82f;
 }
 
-#division-btn i, #multiply-btn i, #subtraction-btn i, #add-btn i, #equal-btn i{
-    color: white;
+#division-btn i,
+#multiply-btn i,
+#subtraction-btn i,
+#add-btn i,
+#equal-btn i {
+  color: white;
 }
 
 /* TOGGLE BUTTONS */
-#toggle-on{
-    
-    background-color: white;
-    font-size: 100px;
-    text-align: center;
-    position: relative;
-    margin-left: 350px;
-    display: none;
-    
+#toggle-on {
+  background-color: white;
+  font-size: 100px;
+  text-align: center;
+  position: relative;
+  margin-left: 350px;
+  display: none;
 }
 #toggle-off {
-    margin-left: 350px;
-    background-color: white;
-    font-size: 100px;
-    text-align: center;
-    position: relative;
-    margin-left: 350px;
+  margin-left: 350px;
+  background-color: white;
+  font-size: 100px;
+  text-align: center;
+  position: relative;
+  margin-left: 350px;
 }
-
