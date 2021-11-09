@@ -1,14 +1,14 @@
-/* //Variables
+//Variables
 
 const acBtn = document.getElementById('ac-btn');
 const clearBtn = document.getElementById('clear-btn');
 const output = document.getElementById('output');
+const number = document.querySelectorAll('.num');
+current = '0'
 
 //Numbers
-const num9 = document.getElementById('num9');
-const num8 = document.getElementById('num8');
-const num7 = document.getElementById('num7');
 
+/*
 // Event Listeners
 
 acBtn.addEventListener('click', function () {

@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
 }
 
 body {
@@ -14,17 +14,15 @@ body {
 }
 
 .wrapper {
+  margin: auto;
   margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
+  max-width: 350px;
 }
 
 .container {
   background-color: #140707;
   border: 2px solid;
-  margin-left: 255px;
-  margin-right: 255px;
+  max-width: 850px;
   margin-bottom: 100px;
 }
 /* Output */
@@ -39,7 +37,7 @@ h3 {
 .btns {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 10px;
+  justify-content: center;
 }
 
 .btns div {
@@ -61,8 +59,8 @@ h3 {
   background-color: #a9a9a9;
 }
 
-#num0 {
-  width: 140px;
+.wrapper .container .num0 {
+  width: 150px;
   justify-content: flex-start;
   padding-left: 25px;
   border-radius: 50px;
@@ -89,19 +87,11 @@ i {
   background-color: white;
 }
 
-#division-btn,
-#multiply-btn,
-#subtraction-btn,
-#add-btn,
-#equal-btn {
+.wrapper .container .op{
   background-color: orange;
 }
 
-#division-btn:hover,
-#multiply-btn:hover,
-#subtraction-btn:hover,
-#add-btn:hover,
-#equal-btn:hover {
+.wrapper .container .op:hover {
   background-color: #ffc82f;
 }
 
