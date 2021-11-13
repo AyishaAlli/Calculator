@@ -3,11 +3,14 @@
 const acBtn = document.getElementById('ac-btn');
 const clearBtn = document.getElementById('clear-btn');
 const output = document.getElementById('output');
-const number = document.querySelectorAll('.num');
+const number = document.querySelectorAll('[data-number]');
 current = '0'
 
 //Numbers
-
+console.log(number)
+number.addEventListener('click', function (){
+  console.log('works!')
+})
 /*
 // Event Listeners
 
