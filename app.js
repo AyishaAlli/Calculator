@@ -2,15 +2,36 @@
 
 const acBtn = document.getElementById('ac-btn');
 const clearBtn = document.getElementById('clear-btn');
-const output = document.getElementById('output');
-const number = document.querySelectorAll('[data-number]');
-current = '0'
+const eachNumber = document.querySelectorAll('[data-number]');
+const keys = document.querySelector('.btns');
+
 
 //Numbers
-console.log(number)
-number.addEventListener('click', function (){
+acBtn.addEventListener('click', function(){
   console.log('works!')
 })
+
+const calculator = {
+  'displayValue': '0',
+  'firstOperand': null,
+  'waitingForSecondOpeerand': false,
+  'operator': null
+} 
+
+function displayValue (){
+  let output = document.getElementById('output');
+  output.innerHTML = calculator['displayValue']
+
+}
+
+displayValue()
+
+keys.addEventListener('click', function(e){
+  const {target} = e
+ console.log(e) 
+
+})
+
 /*
 // Event Listeners
 
