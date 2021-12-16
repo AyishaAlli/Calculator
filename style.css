@@ -76,7 +76,7 @@ i {
 
 #ac-btn,
 #clear-btn,
-#percentage-btn {
+#percentageDiv {
   background-color: #c0c0c0;
   color: black;
 }
@@ -87,11 +87,10 @@ i {
   background-color: white;
 }
 
-.wrapper .container .op {
+.wrapper .container .opStyle {
   background-color: orange;
 }
-
-.wrapper .container .op:hover {
+.wrapper .container .opStyle:hover {
   background-color: #ffc82f;
 }
 
@@ -101,6 +100,10 @@ i {
 #add-btn i,
 #equal-btn i {
   color: white;
+}
+#clear-btn,
+#ac-btn {
+  font-size: 30px;
 }
 
 /* TOGGLE BUTTONS */

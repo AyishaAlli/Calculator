@@ -7,30 +7,41 @@ const keys = document.querySelector('.btns');
 
 
 //Numbers
-acBtn.addEventListener('click', function(){
-  console.log('works!')
-})
+
 
 const calculator = {
-  'displayValue': '0',
-  'firstOperand': null,
-  'waitingForSecondOpeerand': false,
-  'operator': null
+  'value': '0', //Sets default display value to 0 
+  'firstOperand': null, // Set first Operand to Null 
+  'waitingForSecondOpeerand': false, // Waits for second operand (Needs first and operator). Only then will it return true then the next input will be classed as the second Operand 
+  'operator': null // sets Operator to Null 
 } 
+const {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
 
 function displayValue (){
   let output = document.getElementById('output');
-  output.innerHTML = calculator['displayValue']
+  output.innerHTML = value //value from Calculator object 
 
 }
 
-displayValue()
 
 keys.addEventListener('click', function(e){
-  const {target} = e
- console.log(e) 
-
+  const {target} = e //gets target of click
+  
+  if (target.classList.contains('op')){
+    
+    console.log('Operator:', target.id)
+  }
+  
+  if (target.classList.contains('number')){
+    console.log('number:', target.innerHTML)
+    if(calculator['firstOperand'] === null){
+      firstOperand = target.innerHTML
+      displayValue = firstOperand
+    }
+  }
+  
 })
+displayValue()
 
 /*
 // Event Listeners
