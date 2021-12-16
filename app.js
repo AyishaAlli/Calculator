@@ -13,9 +13,9 @@ const calculator = {
   'value': '0', //Sets default display value to 0 
   'firstOperand': null, // Set first Operand to Null 
   'waitingForSecondOpeerand': false, // Waits for second operand (Needs first and operator). Only then will it return true then the next input will be classed as the second Operand 
-  'operator': null // sets Operator to Null 
+  'operator': 'null' // sets Operator to Null 
 } 
-const {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
+let {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
 
 function displayValue (){
   let output = document.getElementById('output');
@@ -26,7 +26,19 @@ function displayValue (){
 
 keys.addEventListener('click', function(e){
   const {target} = e //gets target of click
+
+  //AC BUTTON 
+  if (target.classList.contains('ac')){
+    value = 0 
+    firstOperand = null
+    waitingForSecondOpeerand = false
+    operator = null
+    output.innerHTML = value
+  }
+
+  //CLEAR BUTTON 
   
+
   if (target.classList.contains('op')){
     
     console.log('Operator:', target.id)
@@ -34,11 +46,33 @@ keys.addEventListener('click', function(e){
   
   if (target.classList.contains('number')){
     console.log('number:', target.innerHTML)
-    if(calculator['firstOperand'] === null){
-      firstOperand = target.innerHTML
-      displayValue = firstOperand
+
+    if(firstOperand === null){ // if firstOperand is empty 
+      firstOperand = target.innerHTML // the innerHTML of target will become firstOperand
+      value = firstOperand  
+      output.innerHTML = value
+      console.log(typeof(firstOperand))
+      
+    } else if (firstOperand != null){ // every number pressed after will be added to the previous number 
+      firstOperand = firstOperand+target.innerHTML
+      console.log(firstOperand)
+      value = firstOperand  
+      output.innerHTML = value
+      console.log(typeof(firstOperand))
     }
   }
+  if(target.classList.contains('op')){
+    if (target.id === 'add-btn'){
+      operator = '+' 
+      value = value + operator
+      output.innerHTML = value
+   
+    } else if ( target.id === 'division-btn'){
+      operator.replace(operator, '/') 
+      value = value + operator
+      output.innerHTML = value
+    console.log(output.innerHTML)
+  }}
   
 })
 displayValue()

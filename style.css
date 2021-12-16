@@ -76,7 +76,7 @@ i {
 
 #ac-btn,
 #clear-btn,
-#percentageDiv {
+#percentage-btn {
   background-color: #c0c0c0;
   color: black;
 }
@@ -101,6 +101,7 @@ i {
 #equal-btn i {
   color: white;
 }
+
 #clear-btn,
 #ac-btn {
   font-size: 30px;
