@@ -39,42 +39,48 @@ keys.addEventListener('click', function(e){
   //CLEAR BUTTON 
   
 
-  if (target.classList.contains('op')){
-    
-    console.log('Operator:', target.id)
+  if (target.classList.contains('op')){ //checks if operator was clicked 
+    console.log('Operator:', target.id) //shows what was clicked
   }
   
-  if (target.classList.contains('number')){
-    console.log('number:', target.innerHTML)
+  if (target.classList.contains('number')){ //checks if number was clicked 
+    console.log('number:', target.innerHTML) //shows what number was clicked 
 
     if(firstOperand === null){ // if firstOperand is empty 
       firstOperand = target.innerHTML // the innerHTML of target will become firstOperand
-      value = firstOperand  
+      value = firstOperand
       output.innerHTML = value
-      console.log(typeof(firstOperand))
       
     } else if (firstOperand != null){ // every number pressed after will be added to the previous number 
-      firstOperand = firstOperand+target.innerHTML
-      console.log(firstOperand)
-      value = firstOperand  
+      value = value+target.innerHTML
+      console.log( firstOperand ) 
       output.innerHTML = value
-      console.log(typeof(firstOperand))
-    }
+
+    } 
   }
+
   if(target.classList.contains('op')){
     if (target.id === 'add-btn'){
       operator = '+' 
       value = value + operator
       output.innerHTML = value
-   
+
     } else if ( target.id === 'division-btn'){
       operator.replace(operator, '/') 
       value = value + operator
       output.innerHTML = value
     console.log(output.innerHTML)
-  }}
+  }} 
+
+  //DECIMAL PLACE
+  if(target.id === 'decimal-btn'){
+    value = value + '.'
+    output.innerHTML = value
+
+  }
   
 })
+
 displayValue()
 
 /*
