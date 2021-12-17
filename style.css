@@ -75,14 +75,14 @@ i {
 }
 
 #ac-btn,
-#clear-btn,
+#cancel-btn,
 #percentage-btn {
   background-color: #c0c0c0;
   color: black;
 }
 
 #ac-btn:hover,
-#clear-btn:hover,
+#cancel-btn:hover,
 #percentage-btn:hover {
   background-color: white;
 }
@@ -93,7 +93,9 @@ i {
 .wrapper .container .opStyle:hover {
   background-color: #ffc82f;
 }
-
+#percentage-btn i {
+  background-color: transparent;
+}
 #division-btn i,
 #multiply-btn i,
 #subtraction-btn i,
@@ -102,7 +104,7 @@ i {
   color: white;
 }
 
-#clear-btn,
+#cancel-btn,
 #ac-btn {
   font-size: 30px;
 }
@@ -123,4 +125,9 @@ i {
   text-align: center;
   position: relative;
   margin-left: 350px;
+}
+
+/* IS BUTTON ACTIVE / DEPRESSED - HAS A OP KEY BEEN PRESSED */
+.isDepressed {
+  color: #ffc82f;
 }
