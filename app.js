@@ -36,13 +36,13 @@ keys.addEventListener('click', function(e){
     output.innerHTML = value
   }
 
-  //CLEAR BUTTON 
+  //CLEAR BUTTON TODO 
   
-
   if (target.classList.contains('op')){ //checks if operator was clicked 
     console.log('Operator:', target.id) //shows what was clicked
   }
   
+  // INPUTTING NUMBER 
   if (target.classList.contains('number')){ //checks if number was clicked 
     console.log('number:', target.innerHTML) //shows what number was clicked 
 
@@ -59,6 +59,7 @@ keys.addEventListener('click', function(e){
     } 
   }
 
+// TODDO : need to make sure that the other number after the operator is counted as the second operand 
   if(target.classList.contains('op')){
     if (target.id === 'add-btn'){
       operator = '+' 
