@@ -40,7 +40,8 @@ h3 {
   justify-content: center;
 }
 
-.btns div {
+.btns div,
+.btns button {
   border: 1px solid;
   width: 70px;
   height: 70px;
@@ -108,7 +109,9 @@ i {
 #ac-btn {
   font-size: 30px;
 }
-
+#decimal-btn {
+  font-size: 0.4em;
+}
 /* TOGGLE BUTTONS */
 #toggle-on {
   background-color: white;
@@ -130,4 +133,10 @@ i {
 /* IS BUTTON ACTIVE / DEPRESSED - HAS A OP KEY BEEN PRESSED */
 .isDepressed {
   color: #ffc82f;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: white;
 }

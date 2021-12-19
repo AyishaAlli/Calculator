@@ -41,7 +41,11 @@ function cancelBtn(){
   
 }
 
-function inputDecimal(){}
+function inputDecimal(targetId){
+  if(!value.includes(targetId)){
+    value = value + targetId
+    display.innerHTML = value}
+}
 
 displayValue()
 
@@ -53,15 +57,17 @@ displayValue()
   
   //check if operator was clicked 
   if(target.classList.contains('op')){
-    if(target.id === 'decimal-btn'){
-      value = value + '.'
-      display.innerHTML = value}
+    
     console.log('operator:', target.id);
     return;
   }
 
   // decimal
- 
+  if(target.classList.contains('decimal')){
+    console.log(target.id);
+    inputDecimal(target.value)
+    displayValue()
+  }
 
   // Check if number was clicked 
    if(target.classList.contains('number')){
