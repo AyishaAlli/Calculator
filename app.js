@@ -41,6 +41,8 @@ function cancelBtn(){
   
 }
 
+function inputDecimal(){}
+
 displayValue()
 
 // Event Listeners that checks which key was pressed
@@ -51,9 +53,15 @@ displayValue()
   
   //check if operator was clicked 
   if(target.classList.contains('op')){
+    if(target.id === 'decimal-btn'){
+      value = value + '.'
+      display.innerHTML = value}
     console.log('operator:', target.id);
     return;
   }
+
+  // decimal
+ 
 
   // Check if number was clicked 
    if(target.classList.contains('number')){
