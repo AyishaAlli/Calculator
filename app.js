@@ -1,4 +1,5 @@
 //Variables
+const display = document.getElementById('output');
 
 
 
@@ -19,8 +20,25 @@ function inputDigit(digit){
 }
 
 function displayValue (){
-  const display = document.getElementById('output');
   display.innerHTML = value //value from Calculator object 
+}
+
+function allClear(){
+  value = "0"
+  firstOperand = null
+  waitingForSecondOpeerand = false
+  operator = null
+  display.innerHTML = value
+}
+
+function cancelBtn(){
+  if (value.length === 1){
+    allClear()
+  } else {
+    value = value.slice(0, -1)
+    display.innerHTML = value
+  }
+  
 }
 
 displayValue()
@@ -45,11 +63,13 @@ displayValue()
     //check if cancel btn was clicked 
     if(target.classList.contains('cancel')){
       console.log(target.id);
+      cancelBtn()
       return;
     }
     //check if ac-btn was clicked 
     if(target.classList.contains('ac')){
       console.log(target.id);
+      allClear()
       return;
     }
     
