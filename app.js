@@ -8,7 +8,7 @@ const calculator = {
   'value': '0', //Sets default display value to 0 
   'firstOperand': null, // Set first Operand to Null 
   'waitingForSecondOpeerand': false, // Waits for second operand (Needs first and operator). Only then will it return true then the next input will be classed as the second Operand 
-  'operator': 'null' // sets Operator to Null 
+  'operator': null // sets Operator to Null 
 } 
 
 //shorthand for writing the above object - Destructing 
