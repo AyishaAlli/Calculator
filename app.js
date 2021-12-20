@@ -12,39 +12,52 @@ const calculator = {
 } 
 
 //shorthand for writing the above object - Destructing 
-let {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
+//let {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
 
 
 function inputDigit(digit){
-  value === '0' ? value = digit : value = value + digit; // if display is 0, then adds number clicked, otherwise concats the number to existing number(s)
+  
+  calculator.value === '0' ? calculator.value = digit : calculator.value = calculator.value + digit; // if display is 0, then adds number clicked, otherwise concats the number to existing number(s)
+  console.log(calculator)
 }
 
 function displayValue (){
-  display.innerHTML = value //value from Calculator object 
+  display.innerHTML = calculator.value //value from Calculator object 
 }
 
 function allClear(){
-  value = "0"
-  firstOperand = null
-  waitingForSecondOpeerand = false
-  operator = null
-  display.innerHTML = value
+  calculator.value = "0"
+  calculator.firstOperand = null
+  calculator.waitingForSecondOpeerand = false
+  calculator.operator = null
+  display.innerHTML = calculator.value
 }
 
 function cancelBtn(){
-  if (value.length === 1){
+  if (calculator.value.length === 1){
     allClear()
   } else {
-    value = value.slice(0, -1)
-    display.innerHTML = value
+    calculator.value = calculator.value.slice(0, -1)
+    display.innerHTML = calculator.value
   }
-  
 }
 
 function inputDecimal(targetId){
-  if(!value.includes(targetId)){
-    value = value + targetId
-    display.innerHTML = value}
+  if(!calculator.value.includes(targetId)){
+    calculator.value = calculator.value + targetId
+    display.innerHTML = calculator.value}
+}
+
+//when the user presses an operator after entering first operand
+function handleOperator(nextOperator){
+  const inputValue = parseFloat(calculator.value) //converts string to number 
+  if(calculator.firstOperand === null && !isNaN(calculator.value)){ //checks if first operand is empty and is not an 'NaN' value 
+    calculator.firstOperand = inputValue
+  }
+  calculator.waitingForSecondOpeerand = true;
+  calculator.operator = nextOperator
+  console.log(calculator)
+  displayValue()
 }
 
 displayValue()
@@ -57,7 +70,8 @@ displayValue()
   
   //check if operator was clicked 
   if(target.classList.contains('op')){
-    
+    handleOperator(target.value)
+    console.log(target.value)
     console.log('operator:', target.id);
     return;
   }

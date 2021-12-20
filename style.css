@@ -15,7 +15,7 @@ body {
 
 .wrapper {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 30px;
   max-width: 350px;
 }
 
@@ -23,7 +23,7 @@ body {
   background-color: #140707;
   border: 2px solid;
   max-width: 850px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 /* Output */
 h3 {
@@ -94,20 +94,17 @@ i {
 .wrapper .container .opStyle:hover {
   background-color: #ffc82f;
 }
-#percentage-btn i {
-  background-color: transparent;
-}
-#division-btn i,
-#multiply-btn i,
-#subtraction-btn i,
-#add-btn i,
-#equal-btn i {
-  color: white;
-}
 
 #cancel-btn,
-#ac-btn {
-  font-size: 30px;
+#ac-btn,
+#add-btn,
+#percentage-btn,
+#division-btn,
+#multiply-btn {
+  font-size: 35px;
+}
+#subtraction-btn {
+  font-size: 50px;
 }
 #decimal-btn {
   font-size: 0.4em;
