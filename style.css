@@ -15,7 +15,7 @@ body {
 
 .wrapper {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   max-width: 350px;
 }
 
@@ -23,7 +23,7 @@ body {
   background-color: #140707;
   border: 2px solid;
   max-width: 850px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 /* Output */
 h3 {
@@ -100,7 +100,8 @@ i {
 #add-btn,
 #percentage-btn,
 #division-btn,
-#multiply-btn {
+#multiply-btn,
+#equal-btn {
   font-size: 35px;
 }
 #subtraction-btn {

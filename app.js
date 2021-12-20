@@ -7,18 +7,21 @@ const display = document.getElementById('output');
 const calculator = {
   'value': '0', //Sets default display value to 0 
   'firstOperand': null, // Set first Operand to Null 
-  'waitingForSecondOpeerand': false, // Waits for second operand (Needs first and operator). Only then will it return true then the next input will be classed as the second Operand 
+  'waitingForSecondOperand': false, // Waits for second operand (Needs first and operator). Only then will it return true then the next input will be classed as the second Operand 
   'operator': null // sets Operator to Null 
 } 
 
-//shorthand for writing the above object - Destructing 
-//let {value, firstOperand, waitingForSecondOpeerand, operator} = calculator
+
 
 
 function inputDigit(digit){
-  
-  calculator.value === '0' ? calculator.value = digit : calculator.value = calculator.value + digit; // if display is 0, then adds number clicked, otherwise concats the number to existing number(s)
-  console.log(calculator)
+if (calculator.waitingForSecondOperand === true){ // if this is true then it means any number inputted will be classed as the second operand 
+  calculator.value = digit 
+  calculator.waitingForSecondOperand = false
+} else  {
+calculator.value === '0' ? calculator.value = digit : calculator.value = calculator.value + digit
+}
+console.log(calculator)
 }
 
 function displayValue (){
@@ -28,9 +31,10 @@ function displayValue (){
 function allClear(){
   calculator.value = "0"
   calculator.firstOperand = null
-  calculator.waitingForSecondOpeerand = false
+  calculator.waitingForSecondOperand = false
   calculator.operator = null
   display.innerHTML = calculator.value
+  console.log(calculator)
 }
 
 function cancelBtn(){
@@ -50,15 +54,38 @@ function inputDecimal(targetId){
 
 //when the user presses an operator after entering first operand
 function handleOperator(nextOperator){
-  const inputValue = parseFloat(calculator.value) //converts string to number 
-  if(calculator.firstOperand === null && !isNaN(calculator.value)){ //checks if first operand is empty and is not an 'NaN' value 
-    calculator.firstOperand = inputValue
+  const inputValue = parseFloat(calculator.value) //converts string to number (incl. the decimal)
+  
+  if(calculator.firstOperand == null && !isNaN(calculator.value)){ //checks if first operand is empty and is not an 'NaN' value 
+    calculator.firstOperand = inputValue // pushes value to first operand 
+  } else if (calculator.operator != null){ //checks if theres an oparator (operater is not equal to null)
+    let result = calculateSum(calculator.firstOperand, inputValue, calculator.operator)
+    console.log(result)
+    calculator.firstOperand = result // makes the first operand the result so the user can continue calculation is need be
+    calculator.value = result;
+    
   }
-  calculator.waitingForSecondOpeerand = true;
+  calculator.waitingForSecondOperand = true;
   calculator.operator = nextOperator
   console.log(calculator)
-  displayValue()
+
+  //displayValue()
 }
+
+function calculateSum(firstOperand, secondOperand, operator){
+  if (operator === '+'){
+    console.log('hi')
+    return firstOperand + secondOperand
+  } else if (operator === '-'){
+    return firstOperand - secondOperand
+  } else if (operator === '*'){
+   return  firstOperand * secondOperand
+  } if (operator === '/'){
+    return firstOperand / secondOperand
+  }
+  return secondOperand
+}
+
 
 displayValue()
 
@@ -71,32 +98,33 @@ displayValue()
   //check if operator was clicked 
   if(target.classList.contains('op')){
     handleOperator(target.value)
-    console.log(target.value)
-    console.log('operator:', target.id);
+    //console.log(target.value)
+    //console.log('operator:', target.id);
+    displayValue()
     return;
   }
 
   // decimal
   if(target.classList.contains('decimal')){
-    console.log(target.id);
+    //console.log(target.id);
     inputDecimal(target.value)
     displayValue()
   }
 
   // Check if number was clicked 
    if(target.classList.contains('number')){
-     console.log('number:', target.innerHTML);
+     //console.log('number:', target.innerHTML);
      inputDigit(target.innerHTML)
     }
     //check if cancel btn was clicked 
     if(target.classList.contains('cancel')){
-      console.log(target.id);
+      //console.log(target.id);
       cancelBtn()
       return;
     }
     //check if ac-btn was clicked 
     if(target.classList.contains('ac')){
-      console.log(target.id);
+      //console.log(target.id);
       allClear()
       return;
     }
@@ -117,7 +145,7 @@ displayValue()
 //   if (target.classList.contains('ac')){
 //     value = '0' 
 //     firstOperand = null
-//     waitingForSecondOpeerand = false
+//     waitingForSecondOperand = false
 //     operator = null
 //     display.innerHTML = value
 //   }
