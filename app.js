@@ -67,7 +67,7 @@ function handleOperator(nextOperator){
     let result = calculateSum(calculator.firstOperand, inputValue, calculator.operator)
     console.log(result)
     calculator.firstOperand = result // makes the first operand the result so the user can continue calculation is need be
-    calculator.value = result;
+    calculator.value = parseFloat(result.toFixed(7)); // makes sure theres no extra 0's . i.e before adding this line, 0.2 + 0.1 would = 0.300000004
     
   }
   calculator.waitingForSecondOperand = true;
