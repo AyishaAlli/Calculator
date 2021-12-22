@@ -33,7 +33,6 @@ function allClear(){
   calculator.firstOperand = null
   calculator.waitingForSecondOperand = false
   calculator.operator = null
-  display.innerHTML = calculator.value
   console.log(calculator)
 }
 
@@ -47,6 +46,12 @@ function cancelBtn(){
 }
 
 function inputDecimal(targetId){
+  if (calculator.waitingForSecondOperand === true) { // fixes the bug so youre able to hit a decimal point after pressing an operator. the decimal point will now count as the second operand 
+  	calculator.value = '0.'
+    calculator.waitingForSecondOperand = false;
+    console.log(calculator)
+    return
+  }
   if(!calculator.value.includes(targetId)){
     calculator.value = calculator.value + targetId
     display.innerHTML = calculator.value}
@@ -126,6 +131,7 @@ displayValue()
     if(target.classList.contains('ac')){
       //console.log(target.id);
       allClear()
+      displayValue()
       return;
     }
     
@@ -136,54 +142,5 @@ displayValue()
 
 
 
-
-
-// document.querySelector('.btns').addEventListener('click', function(e){
-//   const {target} = e //equiv to const target = event.target
-
-//   //AC BUTTON 
-//   if (target.classList.contains('ac')){
-//     value = '0' 
-//     firstOperand = null
-//     waitingForSecondOperand = false
-//     operator = null
-//     display.innerHTML = value
-//   }
-
-//   //CLEAR BUTTON TODO 
-  
-//   if (target.classList.contains('op')){ //checks if operator was clicked 
-//     console.log('Operator:', target.id) //shows what was clicked
-//     target.classList.add('isDepressed')
-//   }
-  
-//   // INPUTTING NUMBER 
-//   if(target.classList.contains('number')){
-//     console.log('number:', target.innerHTML)
-//     return;
-//   }
-  
-
-//     // TODDO : need to make sure that the other number after the operator is counted as the second operand 
-//   if(target.classList.contains('op')){
-//     if (target.id === 'add-btn'){
-//       operator = '+' 
-//       value = value + operator
-//       display.innerHTML = value
-
-//     } else if ( target.id === 'division-btn'){
-//       operator.replace(operator, '/') 
-//       value = value + operator
-//       display.innerHTML = value
-//     console.log(display.innerHTML)
-//   }} 
-
-//   //DECIMAL PLACE
-//   if(target.id === 'decimal-btn'){
-//     value = value + '.'
-//     display.innerHTML = value
-
-//   }
-//   })
 
 

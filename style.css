@@ -94,7 +94,9 @@ i {
 .wrapper .container .opStyle:hover {
   background-color: #ffc82f;
 }
-
+.wrapper .container .op:focus {
+  background-color: #ffc82f;
+}
 #cancel-btn,
 #ac-btn,
 #add-btn,
