@@ -97,6 +97,10 @@ i {
 .wrapper .container .op:focus {
   background-color: #ffc82f;
 }
+
+#percentage-btn:focus {
+  background-color: white;
+}
 #cancel-btn,
 #ac-btn,
 #add-btn,
