@@ -10,29 +10,41 @@
 <body>
     <div class="wrapper">
     <div class="container">
+        <div class="historyScreen">
+            <h3 id="historyScreen"></h3>
+           </div>
         <div class="output">
-         <h3 id="output">0</h3>
+         <h3 id="output"></h3>
         </div>
         <div class="btns">
-        <div id="ac-btn" style="font-size:30px">AC</div>
-        <div id="clear-btn" style="font-size:30px">C</div>
-        <div id="percentage-btn"><i class="fas fa-percentage"></i></div>
-        <div id="division-btn"><i class="fas fa-divide"></i></div>
-        <div id="num7">7</div>
-        <div id="num8">8</div>
-        <div id="num9">9</div>
-        <div id="multiply-btn"><i class="fas fa-times"></i></div>
-        <div id="num4">4</div>
-        <div id="num5">5</div>
-        <div id="num6">6</div>
-        <div id="subtraction-btn"><i class="fas fa-minus"></i></div>
-        <div id="num1">1</div>
-        <div id="num2">2</div>
-        <div id="num3">3</div>
-        <div id="add-btn"><i class="fas fa-plus"></i></div>
-        <div id="num0">0</div>
-        <div id="decimal-btn" style="font-size: 0.4em;"><i class="fas fa-circle"></i></div>
-        <div id="equal-btn"><i class="fas fa-equals"></i></div>
+            <!-- class='op' used for Javascript so I can target the elements in and outside of the div as it wasnt working when 'op' was a class in the div and not the icon tag -->
+        <button id="ac-btn" class="opStyle ac">AC</button>
+        <button id="cancel-btn" class="opStyle cancel">C</button>
+        <button id="percentage-btn" class="opStyle op" value="%">%</button>
+        <button id="division-btn" class="opStyle op" value="/">&divide;</button>
+
+        <div class="number" data-number="7">7</div>
+        <div class="number" data-number="8">8</div>
+        <div class="number" data-number="9">9</div>
+
+        <button id="multiply-btn" class="opStyle op" value="*">x</i></button>
+
+        <div class="number" data-number="4">4</div>
+        <div class="number" data-number="5">5</div>
+        <div class="number" data-number="6">6</div>
+
+        <button id="subtraction-btn" class="opStyle op" value="-">-</button>
+
+        <div class="number" data-number="1">1</div>
+        <div class="number" data-number="2">2</div>
+        <div class="number" data-number="3">3</div>
+
+        <button id="add-btn" class="opStyle op" value="+">+</button>
+
+        <div class="number num0" data-number="0">0</div>
+        
+        <button id="decimal-btn" class="opStyle  decimal" value='.' ><i id="decimal-btn" class="fas fa-circle  decimal"></i></button>
+        <button id="equal-btn" class="opStyle op">=</button>
     </div>
     </div>
 </div>

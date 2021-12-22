@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
 }
 
 body {
@@ -14,18 +14,16 @@ body {
 }
 
 .wrapper {
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
+  margin: auto;
+  margin-top: 20px;
+  max-width: 350px;
 }
 
 .container {
   background-color: #140707;
   border: 2px solid;
-  margin-left: 255px;
-  margin-right: 255px;
-  margin-bottom: 100px;
+  max-width: 850px;
+  margin-bottom: 50px;
 }
 /* Output */
 h3 {
@@ -39,10 +37,11 @@ h3 {
 .btns {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 10px;
+  justify-content: center;
 }
 
-.btns div {
+.btns div,
+.btns button {
   border: 1px solid;
   width: 70px;
   height: 70px;
@@ -61,8 +60,8 @@ h3 {
   background-color: #a9a9a9;
 }
 
-#num0 {
-  width: 140px;
+.wrapper .container .num0 {
+  width: 150px;
   justify-content: flex-start;
   padding-left: 25px;
   border-radius: 50px;
@@ -77,42 +76,46 @@ i {
 }
 
 #ac-btn,
-#clear-btn,
+#cancel-btn,
 #percentage-btn {
   background-color: #c0c0c0;
   color: black;
 }
 
 #ac-btn:hover,
-#clear-btn:hover,
+#cancel-btn:hover,
 #percentage-btn:hover {
   background-color: white;
 }
 
-#division-btn,
-#multiply-btn,
-#subtraction-btn,
-#add-btn,
-#equal-btn {
+.wrapper .container .opStyle {
   background-color: orange;
 }
-
-#division-btn:hover,
-#multiply-btn:hover,
-#subtraction-btn:hover,
-#add-btn:hover,
-#equal-btn:hover {
+.wrapper .container .opStyle:hover {
+  background-color: #ffc82f;
+}
+.wrapper .container .op:focus {
   background-color: #ffc82f;
 }
 
-#division-btn i,
-#multiply-btn i,
-#subtraction-btn i,
-#add-btn i,
-#equal-btn i {
-  color: white;
+#percentage-btn:focus {
+  background-color: white;
 }
-
+#cancel-btn,
+#ac-btn,
+#add-btn,
+#percentage-btn,
+#division-btn,
+#multiply-btn,
+#equal-btn {
+  font-size: 35px;
+}
+#subtraction-btn {
+  font-size: 50px;
+}
+#decimal-btn {
+  font-size: 0.4em;
+}
 /* TOGGLE BUTTONS */
 #toggle-on {
   background-color: white;
@@ -129,4 +132,15 @@ i {
   text-align: center;
   position: relative;
   margin-left: 350px;
+}
+
+/* IS BUTTON ACTIVE / DEPRESSED - HAS A OP KEY BEEN PRESSED */
+.isDepressed {
+  color: #ffc82f;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: white;
 }
