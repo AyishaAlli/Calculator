@@ -21,7 +21,7 @@ Calculate percentages
 - Flexbox
 - Vanilla JavaScript
 
-##Acknowledgements
+## Acknowledgements
 
 [https://freshman.tech/calculator/] (https://freshman.tech/calculator/) - This website helped me a great deal! Super easy to follow along if I got stuck
 

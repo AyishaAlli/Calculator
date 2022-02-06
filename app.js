@@ -1,8 +1,6 @@
 //Variables
 const display = document.getElementById('output');
 
-
-
 //Object holding all of our data
 const calculator = {
   'value': '0', //Sets default display value to 0 
@@ -11,9 +9,6 @@ const calculator = {
   'operator': null // sets Operator to Null 
 } 
 
-
-
-
 function inputDigit(digit){
 if (calculator.waitingForSecondOperand === true){ // if this is true then it means any number inputted will be classed as the second operand 
   calculator.value = digit 
@@ -21,7 +16,7 @@ if (calculator.waitingForSecondOperand === true){ // if this is true then it mea
 } else  {
 calculator.value === '0' ? calculator.value = digit : calculator.value = calculator.value + digit
 }
-console.log(calculator)
+//console.log(calculator)
 }
 
 function displayValue (){
@@ -33,7 +28,7 @@ function allClear(){
   calculator.firstOperand = null
   calculator.waitingForSecondOperand = false
   calculator.operator = null
-  console.log(calculator)
+  //console.log(calculator)
 }
 
 function cancelBtn(){
@@ -65,14 +60,14 @@ function handleOperator(nextOperator){
     calculator.firstOperand = inputValue // pushes value to first operand 
   } else if (calculator.operator != null){ //checks if theres an oparator (operater is not equal to null)
     let result = calculateSum(calculator.firstOperand, inputValue, calculator.operator)
-    console.log(result)
+    //console.log(result)
     calculator.firstOperand = result // makes the first operand the result so the user can continue calculation is need be
     calculator.value = parseFloat(result.toFixed(7)); // makes sure theres no extra 0's . i.e before adding this line, 0.2 + 0.1 would = 0.300000004
     
   }
   calculator.waitingForSecondOperand = true;
   calculator.operator = nextOperator
-  console.log(calculator)
+  //console.log(calculator)
 
   //displayValue()
 }
@@ -105,8 +100,6 @@ displayValue()
   //check if operator was clicked 
   if(target.classList.contains('op')){
     handleOperator(target.value)
-    //console.log(target.value)
-    //console.log('operator:', target.id);
     displayValue()
     return;
   }
