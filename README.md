@@ -28,4 +28,4 @@ Calculate percentages
 ## Author
 
 - Website - [www.ayishaalli.com](https://www.ayishaalli.com)
-- Twitter - [@yayishaalli_dev](https://www.twitter.com/ayishaalli_dev)
+
